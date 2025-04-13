@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AkahuClient", "AkahuClient\AkahuClient.csproj", "{3E85227B-F629-4B94-823C-A1CD9DB6B95C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AkahuClientTest", "AkahuClientTest\AkahuClientTest.csproj", "{D96F7219-09EE-43FE-B2CA-DF1DF299F05D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{3E85227B-F629-4B94-823C-A1CD9DB6B95C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E85227B-F629-4B94-823C-A1CD9DB6B95C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E85227B-F629-4B94-823C-A1CD9DB6B95C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D96F7219-09EE-43FE-B2CA-DF1DF299F05D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D96F7219-09EE-43FE-B2CA-DF1DF299F05D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D96F7219-09EE-43FE-B2CA-DF1DF299F05D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D96F7219-09EE-43FE-B2CA-DF1DF299F05D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

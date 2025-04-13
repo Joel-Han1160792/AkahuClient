@@ -4,11 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0038c2dd-ab0f-4c37-a3c7-316bea76c520" name="Changes" comment="" />
+    <list default="true" id="0038c2dd-ab0f-4c37-a3c7-316bea76c520" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/AkahuClient/CaseInsensitiveEnumConverter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AkahuClient/Models/Accounts/AccountResponse.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AkahuClientTest/Helper/HttpClientBuilder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.AkahuClient/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AkahuClient/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AkahuClient.sln" beforeDir="false" afterPath="$PROJECT_DIR$/AkahuClient.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AkahuClient/AkahuService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AkahuClient/AkahuService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AkahuClient/AkahuServiceRegistration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AkahuClient/AkahuServiceRegistration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AkahuClient/IAkahuService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AkahuClient/IAkahuService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AkahuClient/Models/Accounts/Account.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AkahuClient/Models/Accounts/Account.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AkahuClient/Models/Accounts/AccountBalance.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AkahuClient/Models/Accounts/AccountBalance.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AkahuClient/Models/Accounts/Enums/AccountStatus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AkahuClient/Models/Accounts/Enums/AccountStatus.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AkahuClient/Models/Accounts/Enums/AccountType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AkahuClient/Models/Accounts/Enums/AccountType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AkahuClient/Models/Connections.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AkahuClient/Models/Connections.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DpaMonitoringSettings">
+    <option name="firstShow" value="false" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -20,12 +37,17 @@
     &quot;assignee&quot;: &quot;kamifoo&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Joel-Han1160792/AkahuClient.git&quot;,
-    &quot;accountId&quot;: &quot;efe1f119-f25b-42eb-9f27-1843fa69ef02&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Joel-Han1160792/AkahuClient.git",
+    "accountId": "6ae467f8-6b39-45c1-b03a-035f6a757a2e"
   }
-}</component>
+}]]></component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/11f797610ded4bd2bbc36790260571131d8c00/59/3f590e94/HttpClient.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/18429a71393536d36caea68412f9b8cb5847efc4e7ed27989cba4d64c5512b/AsyncTestSyncContext.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c3ec25c53b94f51fa21da479c513e551efee2b5ae49a79934686d2bb714d46/TestInvoker.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
@@ -38,8 +60,14 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "24ad00e2-7776-4d66-a93c-d91470f98bd2.executor": "Debug",
+    "3279f7d6-6a21-4cc7-840c-6177e768933d.executor": "Debug",
+    "62b146b7-d157-4b6e-9ede-c208bdfe9a51.executor": "Debug",
+    "8c4e0324-76d4-4b80-813b-e713d26178a3.executor": "Debug",
+    "9c997db0-5072-4d50-9dfd-d1a3f88e6172.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "XThreadsFramesViewSplitterKey": "0.43034825",
     "git-widget-placeholder": "main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -50,6 +78,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager" selected="62b146b7-d157-4b6e-9ede-c208bdfe9a51" />
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -61,6 +90,7 @@
       <workItem from="1743834933969" duration="215000" />
       <workItem from="1743835841656" duration="27000" />
       <workItem from="1743835881829" duration="1064000" />
+      <workItem from="1744502248543" duration="2016000" />
     </task>
     <task id="LOCAL-00001" summary="init: First commit">
       <option name="closed" value="true" />
@@ -122,6 +152,51 @@
     <MESSAGE value="init: First commit" />
     <MESSAGE value="fix: commit project files" />
     <MESSAGE value="fix: add global.json" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: add global.json" />
+    <option name="LAST_COMMIT_MESSAGE" value="" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/AkahuClientTest/AkahuServiceTest.cs</url>
+          <line>38</line>
+          <properties documentPath="$PROJECT_DIR$/AkahuClientTest/AkahuServiceTest.cs" containingFunctionPresentation="Method 'GetAccountAsync_WithToken_ReturnAccount'">
+            <startOffsets>
+              <option value="1115" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1157" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/AkahuClient/AkahuService.cs</url>
+          <line>46</line>
+          <properties documentPath="$PROJECT_DIR$/AkahuClient/AkahuService.cs" containingFunctionPresentation="Method 'ListAccountsAsync'">
+            <startOffsets>
+              <option value="1537" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1613" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/AkahuClientTest/AkahuServiceTest.cs</url>
+          <line>40</line>
+          <properties documentPath="$PROJECT_DIR$/AkahuClientTest/AkahuServiceTest.cs" containingFunctionPresentation="Method 'GetAccountAsync_WithToken_ReturnAccount'">
+            <startOffsets>
+              <option value="1225" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1248" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

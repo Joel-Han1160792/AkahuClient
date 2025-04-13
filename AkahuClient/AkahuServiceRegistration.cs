@@ -1,9 +1,10 @@
 using Microsoft.Extensions.DependencyInjection;
 using System.Net.Http.Headers;
+using AkahuClient;
 
 public static class ServiceRegistration
 {
-    public static IServiceCollection AddMyHttpClientService(
+    public static IServiceCollection AddAkahuClientService(
         this IServiceCollection services, 
         Action<Token> configureToken
     )
