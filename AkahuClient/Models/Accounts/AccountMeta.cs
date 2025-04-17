@@ -1,25 +1,21 @@
-using System.Runtime.InteropServices.JavaScript;
-using AkahuClient.Models.Accounts.Enums;
+using AkahuClient.Models.Accounts.Enums.AccountLoanDetails;
 
 namespace AkahuClient.Models.Accounts;
 
 public class AccountMeta
 {
-    /**
-     * The account holder name
-     */
+    /// <summary>
+    /// The account holder name
+    /// </summary>
     public string? Holder { get; set; }
-    /**
-     * Details about a loan account, if available.
-     */
+
+    /// <summary>
+    /// Details about a loan account, if available.
+    /// </summary>
     public AccountLoanDetail? Name { get; set; }
-    /**
-     * Catch-all for dynamic attributes.
-     */
-    public Dictionary<string, object>? AdditionalAttributes { get; set; }
-    
-    public AccountMeta()
-    {
-        AdditionalAttributes = new Dictionary<string, object>();
-    }
+
+    /// <summary>
+    /// Catch-all for dynamic attributes.
+    /// </summary>
+    public Dictionary<string, object>? AdditionalAttributes { get; set; } = new();
 }

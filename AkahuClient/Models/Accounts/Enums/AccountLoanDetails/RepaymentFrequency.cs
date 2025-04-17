@@ -1,5 +1,4 @@
-namespace AkahuClient.Models.Accounts.Enums;
-
+namespace AkahuClient.Models.Accounts.Enums.AccountLoanDetails;
 
 public enum RepaymentFrequency
 {

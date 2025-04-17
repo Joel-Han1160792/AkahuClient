@@ -1,9 +1,8 @@
 using System.ComponentModel;
 
-namespace AkahuClient.Models.General.Enums;
+namespace AkahuClient.Models.Commons.Enums;
 
 public enum Currency
 {
-    [Description("New Zealand Dollar")]
-    NZD = 554
+    [Description("New Zealand Dollar")] NZD = 554
 }

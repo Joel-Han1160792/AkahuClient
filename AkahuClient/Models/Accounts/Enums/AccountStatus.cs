@@ -4,8 +4,6 @@ namespace AkahuClient.Models.Accounts.Enums;
 
 public enum AccountStatus
 {
-    [Description("INACTIVE")]
-    Inactive,
-    [Description("ACTIVE")]
-    Active,
+    [Description("INACTIVE")] Inactive,
+    [Description("ACTIVE")] Active
 }

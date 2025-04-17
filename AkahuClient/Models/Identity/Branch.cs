@@ -1,10 +1,12 @@
 namespace AkahuClient.Models.Identity;
 
-/** Branch details (if available) */
-public class Branch
+/// <summary>
+/// Branch details (if available)
+/// </summary>
+public abstract class Branch
 {
-    public string Id { get; set; }
-    public string Description { get; set; }
-    public string Phone { get; set; }
-    public BranchAddress Address { get; set; }
+    public string? Id { get; set; }
+    public string? Description { get; set; }
+    public string? Phone { get; set; }
+    public BranchAddress? Address { get; set; }
 }

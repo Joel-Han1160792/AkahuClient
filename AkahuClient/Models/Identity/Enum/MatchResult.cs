@@ -1,8 +1,7 @@
-namespace AkahuClient.Models.Identity;
+namespace AkahuClient.Models.Identity.Enum;
 
 public enum MatchResult
 {
     Match,
     PartialMatch
-
 }

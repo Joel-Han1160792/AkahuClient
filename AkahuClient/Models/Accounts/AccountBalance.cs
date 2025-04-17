@@ -1,9 +1,7 @@
-using AkahuClient.Models.General.Enums;
+using System.Text.Json.Serialization;
+using AkahuClient.Models.Commons.Enums;
 
 namespace AkahuClient.Models.Accounts;
-
-using System.Text.Json.Serialization;
-using AkahuClient.Models.General.Enums;
 
 public class AccountBalance
 {

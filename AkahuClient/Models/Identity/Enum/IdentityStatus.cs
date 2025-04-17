@@ -1,4 +1,4 @@
-namespace AkahuClient.Models.Identity;
+namespace AkahuClient.Models.Identity.Enum;
 
 public enum IdentityStatus
 {

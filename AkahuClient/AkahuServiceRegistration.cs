@@ -1,27 +1,28 @@
-using Microsoft.Extensions.DependencyInjection;
 using System.Net.Http.Headers;
-using AkahuClient;
+using AkahuClient.Configurations;
+using Microsoft.Extensions.DependencyInjection;
+
+namespace AkahuClient;
 
 public static class ServiceRegistration
 {
     public static IServiceCollection AddAkahuClientService(
-        this IServiceCollection services, 
-        Action<Token> configureToken
+        this IServiceCollection services,
+        Action<AkahuToken> configureToken
     )
     {
-        var token = new Token();
+        var token = new AkahuToken();
         configureToken(token);
 
-        services.AddSingleton(token); 
+        services.AddSingleton(token);
 
         services.AddHttpClient<IAkahuService, AkahuService>((serviceProvider, client) =>
         {
-            var token = serviceProvider.GetRequiredService<Token>();
+            var loadedToken = serviceProvider.GetRequiredService<AkahuToken>();
 
-            // TODO 检查 http client 信息是否正确配置
             client.BaseAddress = new Uri(Endpoint.BaseUrl);
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token.UserToken);
-            client.DefaultRequestHeaders.Add("X-Akahu-Id", token.AppToken);
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", loadedToken.UserToken);
+            client.DefaultRequestHeaders.Add("X-Akahu-Id", loadedToken.AppToken);
             client.DefaultRequestHeaders.Add("Host", Endpoint.Host);
         });
 
