@@ -1,0 +1,11 @@
+{
+  "version": "/v1",
+  "host": "api.akahu.io",
+  "baseUrl": "https://api.akahu.io",
+  "endpoint": {
+    "user": "/me",
+    "account": "/accounts",
+    "transfer": "/transfers",
+    "payment": "/payments"
+  }
+}

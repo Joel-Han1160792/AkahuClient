@@ -1,18 +1,15 @@
 using System.Text.Json;
-using System.Text.Json.Serialization;
 using AkahuClient.Configurations;
 using AkahuClient.Extensions;
 using AkahuClient.Models.Accounts;
-using AkahuClient.Models.Accounts.Enums;
-using AkahuClient.Models.Commons.Enums;
 
 namespace AkahuClient;
 
-public class AkahuService(HttpClient httpClient) : IAkahuService
+public class AkahuService(HttpClient httpClient, AkahuEndpoint endpoint) : IAkahuService
 {
     public async Task<IEnumerable<Account>?> ListAccountsAsync()
     {
-        var response = await httpClient.GetAsync(Endpoint.Account);
+        var response = await httpClient.GetAsync(endpoint.Account);
         response.EnsureSuccessStatusCode();
         var content = await response.Content.ReadAsStringAsync();
         if (content.IsNullOrEmpty())
@@ -20,27 +17,7 @@ public class AkahuService(HttpClient httpClient) : IAkahuService
                 HttpRequestError.InvalidResponse,
                 "Account cannot be found");
 
-        var options = new JsonSerializerOptions
-        {
-            PropertyNameCaseInsensitive = true
-        };
-
-        var enumTypes = new[]
-        {
-            typeof(AccountType),
-            typeof(AccountStatus),
-            typeof(AccountAttribute),
-            typeof(Currency)
-        };
-
-        foreach (var enumType in enumTypes)
-        {
-            var converterType = typeof(CaseInsensitiveEnumConverter<>).MakeGenericType(enumType);
-            var converterInstance = (JsonConverter)Activator.CreateInstance(converterType)!;
-            options.Converters.Add(converterInstance);
-        }
-
-        var account = JsonSerializer.Deserialize<AccountResponse>(content, options);
+        var account = JsonSerializer.Deserialize<AccountResponse>(content, AkahuJsonSerializerConfiguration.Options);
 
         if (account is null || account.HasEmptyItem())  
             throw new HttpRequestException(HttpRequestError.InvalidResponse, "Account cannot be found");

@@ -1,4 +1,5 @@
 using System.Net.Http.Headers;
+using System.Text.Json;
 using AkahuClient.Configurations;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -11,6 +12,21 @@ public static class ServiceRegistration
         Action<AkahuToken> configureToken
     )
     {
+        #region Load Endpoint
+
+        var endpointConfigJson = File.ReadAllText(
+            Directory.GetCurrentDirectory()
+        );
+        var endpoint =
+            JsonSerializer.Deserialize<AkahuEndpointConfiguration>(endpointConfigJson)
+            ?? new AkahuEndpointConfiguration();
+
+        services.AddSingleton(new AkahuEndpoint(endpoint));
+
+        #endregion
+
+        #region Configure Akahu token
+
         var token = new AkahuToken();
         configureToken(token);
 
@@ -20,11 +36,14 @@ public static class ServiceRegistration
         {
             var loadedToken = serviceProvider.GetRequiredService<AkahuToken>();
 
-            client.BaseAddress = new Uri(Endpoint.BaseUrl);
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", loadedToken.UserToken);
+            client.BaseAddress = new Uri(endpoint.Baseurl);
+            client.DefaultRequestHeaders.Authorization =
+                new AuthenticationHeaderValue("Bearer", loadedToken.UserToken);
             client.DefaultRequestHeaders.Add("X-Akahu-Id", loadedToken.AppToken);
-            client.DefaultRequestHeaders.Add("Host", Endpoint.Host);
+            client.DefaultRequestHeaders.Add("Host", endpoint.Host);
         });
+
+        #endregion
 
         return services;
     }

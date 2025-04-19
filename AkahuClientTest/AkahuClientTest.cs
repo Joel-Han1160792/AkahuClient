@@ -9,11 +9,16 @@ public class AkahuServiceTest
 {
     private IAkahuService _underTest;
 
+    private AkahuEndpoint _endpoint = new AkahuEndpoint(null);
+
     public AkahuServiceTest()
     {
-        _underTest = new AkahuService(new HttpClientBuilder().Build());
+        _underTest = new AkahuService(
+            new HttpClientBuilder().Build(),
+            _endpoint
+        );
     }
-    
+
     // BDD Test Method Name
     [Fact]
     public async Task WhenGetFromAkahuWihoutToken_ShouldReturnUnauthorisedResponse()
@@ -26,18 +31,19 @@ public class AkahuServiceTest
         Assert.NotNull(result);
         Assert.Contains("401", result.Message);
     }
-    
+
     // C# Test Method Name
     [Fact]
     public async Task GetAccountAsync_WithToken_ReturnAccount()
     {
-        var httpClient =  new HttpClientBuilder()
-            .SetBaseAddress(Endpoint.BaseUrl)
-            .SetHost(Endpoint.Host)
+        var httpClient = new HttpClientBuilder()
+            .SetBaseAddress(_endpoint.BaseUrl)
+            .SetHost(_endpoint.Host)
+            // TODO Set up a dev app credential - Not important for now
             .SetAuthToken("user_token_clxlwmm5q000208l87s4183yc")
             .SetXAkahuAppToken("app_token_clxlwmm5q000108l8blic6nzx")
             .Build();
-        _underTest = new AkahuService(httpClient);
+        _underTest = new AkahuService(httpClient, _endpoint);
         var result = await _underTest.ListAccountsAsync();
         Assert.NotNull(result);
         Assert.Equal(2, result.Count());
