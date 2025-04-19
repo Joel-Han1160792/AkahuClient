@@ -1,4 +1,5 @@
 using AkahuClient;
+using AkahuClient.Configurations;
 using AkahuClient.Models.Accounts.Enums;
 using AkahuClientTest.Helper;
 
