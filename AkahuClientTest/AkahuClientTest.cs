@@ -46,8 +46,8 @@ public class AkahuServiceTest
         _underTest = new AkahuService(httpClient, _endpoint);
         var result = await _underTest.ListAccountsAsync();
         Assert.NotNull(result);
-        Assert.Equal(2, result.Count());
-        var firstAccount = result.First();
+        Assert.Equal(2, result.Items.Count());
+        var firstAccount = result.Items.First();
         Assert.Equal(AccountStatus.Active, firstAccount.Status);
     }
 }

@@ -1,27 +1,35 @@
+using System.Net;
 using System.Text.Json;
 using AkahuClient.Configurations;
-using AkahuClient.Extensions;
 using AkahuClient.Models.Accounts;
+using AkahuClient.Models.Transfers;
+
 
 namespace AkahuClient;
 
 public class AkahuService(HttpClient httpClient, AkahuEndpoint endpoint) : IAkahuService
 {
-    public async Task<IEnumerable<Account>?> ListAccountsAsync()
+    public async Task<AccountResponse> ListAccountsAsync()
     {
         var response = await httpClient.GetAsync(endpoint.Account);
-        response.EnsureSuccessStatusCode();
+        try{
+            response.EnsureSuccessStatusCode();
+        }catch(HttpRequestException e)
+        {
+            if (e.StatusCode == HttpStatusCode.NotFound){
+                // logger.LogWarning("xxx not found with");
+                throw;
+            }
+        }
         var content = await response.Content.ReadAsStringAsync();
-        if (content.IsNullOrEmpty())
-            throw new HttpRequestException(
-                HttpRequestError.InvalidResponse,
-                "Account cannot be found");
-
+        
         var account = JsonSerializer.Deserialize<AccountResponse>(content, AkahuJsonSerializerConfiguration.Options);
 
-        if (account is null || account.HasEmptyItem())  
-            throw new HttpRequestException(HttpRequestError.InvalidResponse, "Account cannot be found");
+        return account!;
+    }
 
-        return account!.Items;
+    public Task<TransferResponse> TransferAsync(Account from, Account to, decimal amount)
+    {
+        throw new NotImplementedException();
     }
 }
