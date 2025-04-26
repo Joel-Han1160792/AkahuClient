@@ -15,7 +15,7 @@ public static class ServiceRegistration
         #region Load Endpoint
 
         var endpointConfigJson = File.ReadAllText(
-            Directory.GetCurrentDirectory()
+            Path.Combine(Directory.GetCurrentDirectory(), "akahu.config.json")
         );
         var endpoint =
             JsonSerializer.Deserialize<AkahuEndpointConfiguration>(endpointConfigJson)
