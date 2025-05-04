@@ -1,6 +1,3 @@
-using System.ComponentModel.DataAnnotations;
-using System.Text.Encodings.Web;
-
 namespace AkahuClient.Configurations;
 
 public class AkahuEndpoint(AkahuEndpointConfiguration? configuration)
@@ -14,5 +11,4 @@ public class AkahuEndpoint(AkahuEndpointConfiguration? configuration)
     public string Account => $"{Configuration.Baseurl}{Configuration.Version}{Configuration.Resource.Account}";
     public string Transfer => $"{Configuration.Baseurl}{Configuration.Version}{Configuration.Resource.Transfer}";
     public string Payment => $"{Configuration.Baseurl}{Configuration.Version}{Configuration.Resource.Payment}";
-
 }

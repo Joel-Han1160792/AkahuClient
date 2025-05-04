@@ -1,4 +1,5 @@
 namespace AkahuClient.Models.Transfers;
+
 public class TransferTimelineEntry
 {
     public TransferStatus Status { get; set; }

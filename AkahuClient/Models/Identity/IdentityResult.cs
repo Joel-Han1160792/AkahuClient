@@ -3,7 +3,7 @@ using AkahuClient.Models.Identity.Enum;
 namespace AkahuClient.Models.Identity;
 
 /// <summary>
-/// The result of an Akahu identity verification request.
+///     The result of an Akahu identity verification request.
 /// </summary>
 public class IdentityResult
 {

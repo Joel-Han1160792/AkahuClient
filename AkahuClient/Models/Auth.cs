@@ -1,7 +1,7 @@
 namespace AkahuClient.Models;
 
 /// <summary>
-/// OAuth2 token authorization response.
+///     OAuth2 token authorization response.
 /// </summary>
 public class AuthorizationToken
 {

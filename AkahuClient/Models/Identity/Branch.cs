@@ -1,7 +1,7 @@
 namespace AkahuClient.Models.Identity;
 
 /// <summary>
-/// Branch details (if available)
+///     Branch details (if available)
 /// </summary>
 public abstract class Branch
 {

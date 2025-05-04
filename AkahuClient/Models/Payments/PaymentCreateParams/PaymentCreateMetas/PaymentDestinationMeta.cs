@@ -1,7 +1,7 @@
 namespace AkahuClient.Models.Payments.PaymentCreateParams.PaymentCreateMetas;
 
 /// <summary>
-/// Metadata for the destination (payee) account.
+///     Metadata for the destination (payee) account.
 /// </summary>
 public class PaymentDestinationMeta
 {

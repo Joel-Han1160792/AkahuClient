@@ -21,7 +21,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\AkahuClient\AkahuClient.csproj" />
+        <ProjectReference Include="..\AkahuClient\AkahuClient.csproj"/>
     </ItemGroup>
 
 </Project>

@@ -1,7 +1,7 @@
 namespace AkahuClient.Models.Accounts.Enums.AccountLoanDetails;
 
 /// <summary>
-/// The type of loan, if we can't determine the type, this will be `UNKNOWN`
+///     The type of loan, if we can't determine the type, this will be `UNKNOWN`
 /// </summary>
 public enum AccountLoanType
 {

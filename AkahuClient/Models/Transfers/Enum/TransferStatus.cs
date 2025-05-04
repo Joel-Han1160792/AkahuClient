@@ -1,16 +1,15 @@
 namespace AkahuClient.Models.Transfers;
 
-
 /// <summary>
-/// Transfer status
+///     Transfer status
 /// </summary>
 public enum TransferStatus
 {
-    ERROR,
-    READY,
-    PENDING_APPROVAL,
-    SENT,
-    DECLINED,
-    PAUSED,
-    CANCELLED
+    Error,
+    Ready,
+    PendingApproval,
+    Sent,
+    Declined,
+    Paused,
+    Canceled
 }

@@ -1,7 +1,7 @@
 namespace AkahuClient.Models.Transfers;
 
 /// <summary>
-/// Transfer object returned by the /transfers endpoint.
+///     Transfer object returned by the /transfers endpoint.
 /// </summary>
 public class Transfer
 {
@@ -9,7 +9,7 @@ public class Transfer
     public string From { get; set; }
     public string To { get; set; }
     public decimal Amount { get; set; }
-    public string Sid { get; set; } 
+    public string Sid { get; set; }
     public TransferStatus Status { get; set; }
     public string? StatusText { get; set; }
     public bool Final { get; set; }
@@ -18,7 +18,6 @@ public class Transfer
     public DateTime UpdatedAt { get; set; }
 }
 
-public class TransferResponse:AkahuEnvelopeResponse<Transfer>
+public class TransferResponse : AkahuItemEnvelopeResponse<Transfer>
 {
-    
 }

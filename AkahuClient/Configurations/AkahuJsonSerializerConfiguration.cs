@@ -5,21 +5,21 @@ using AkahuClient.Models.Commons.Enums;
 
 namespace AkahuClient.Configurations;
 
-public class AkahuJsonSerializerConfiguration()
+public class AkahuJsonSerializerConfiguration
 {
     private static JsonSerializerOptions? _options;
-    
+
     public static JsonSerializerOptions Options
     {
         get
         {
-            if(_options != null) return _options;
-            
-            _options = new JsonSerializerOptions()
+            if (_options != null) return _options;
+
+            _options = new JsonSerializerOptions
             {
                 PropertyNameCaseInsensitive = true
             };
-            
+
             var enumTypes = new[]
             {
                 typeof(AccountType),
@@ -34,7 +34,7 @@ public class AkahuJsonSerializerConfiguration()
                 var converterInstance = (JsonConverter)Activator.CreateInstance(converterType)!;
                 _options.Converters.Add(converterInstance);
             }
-            
+
             return _options;
         }
     }

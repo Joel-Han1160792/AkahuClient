@@ -3,7 +3,7 @@ using System.Text.Json.Serialization;
 namespace AkahuClient.Models;
 
 /// <summary>
-/// Akahu connection metadata returned by /connections endpoints.
+///     Akahu connection metadata returned by /connections endpoints.
 /// </summary>
 public class Connection
 {

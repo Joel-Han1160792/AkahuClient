@@ -1,5 +1,6 @@
 using AkahuClient;
 using AkahuClient.Configurations;
+using AkahuClient.Models.Accounts;
 using AkahuClient.Models.Accounts.Enums;
 using AkahuClientTest.Helper;
 
@@ -7,9 +8,8 @@ namespace AkahuClientTest;
 
 public class AkahuServiceTest
 {
+    private readonly AkahuEndpoint _endpoint = new(null);
     private IAkahuService _underTest;
-
-    private AkahuEndpoint _endpoint = new AkahuEndpoint(null);
 
     public AkahuServiceTest()
     {
@@ -40,8 +40,8 @@ public class AkahuServiceTest
             .SetBaseAddress(_endpoint.BaseUrl)
             .SetHost(_endpoint.Host)
             // TODO Set up a dev app credential - Not important for now
-            .SetAuthToken("user_token_clxlwmm5q000208l87s4183yc")
-            .SetXAkahuAppToken("app_token_clxlwmm5q000108l8blic6nzx")
+            .SetAuthToken("")
+            .SetXAkahuAppToken("")
             .Build();
         _underTest = new AkahuService(httpClient, _endpoint);
         var result = await _underTest.ListAccountsAsync();
@@ -50,14 +50,64 @@ public class AkahuServiceTest
         var firstAccount = result.Items.First();
         Assert.Equal(AccountStatus.Active, firstAccount.Status);
     }
-}
 
-// Reflection
-// C# -> Assembly code -> 01010101
-// [Fact] -> Assembly code (Fact:JustATest) -> 010101010
-// xUnit starts up, first loads everything with [Fact]/[Theory]
-//    -> Okay, there is one test: JustATest
-//.   -> But JustATest is in AkahuServiceTest class
-//.   -> Initiate AkahuServiceTest class
-//.   -> Then run AkahuServiceTest.JustATest
-//       -> Assert.True(true);
+
+    [Fact]
+    public async Task TransferAsync_WithValidData_ShouldReturnSuccess()
+    {
+        // Arrange
+        var httpClient = new HttpClientBuilder()
+            .SetBaseAddress(_endpoint.BaseUrl)
+            .SetHost(_endpoint.Host)
+            .SetAuthToken("")
+            .SetXAkahuAppToken("")
+            .Build();
+
+        _underTest = new AkahuService(httpClient, _endpoint);
+        var accountResult = await _underTest.ListAccountsAsync();
+        var fromAccount = new Account { Id = accountResult.Items.First().Id };
+        var toAccount = new Account { Id = accountResult.Items.Last().Id };
+        var amount = 0.01M;
+
+        // Act
+        var result = await _underTest.TransferAsync(fromAccount, toAccount, amount);
+
+        // Assert
+        Assert.NotNull(result);
+        Assert.True(result.Success);
+        Assert.False(result.HasEmptyItem());
+        var transfer = result.Item!;
+        Assert.Equal(transfer.Amount, amount);
+        // Assert.Equal("PENDING_APPROVAL", result.Status.ToString()); 
+    }
+
+
+    [Fact]
+    public async Task PaymentAsync_WithValidData_ShouldReturnSuccess()
+    {
+        // Arrange
+        var httpClient = new HttpClientBuilder()
+            .SetBaseAddress(_endpoint.BaseUrl)
+            .SetHost(_endpoint.Host)
+            .SetAuthToken("")
+            .SetXAkahuAppToken("")
+            .Build();
+
+        _underTest = new AkahuService(httpClient, _endpoint);
+        var accountResult = await _underTest.ListAccountsAsync();
+        var fromAccount = new Account { Id = accountResult.Items.First().Id };
+        var toAccount = new Account { FormattedAccount = "", Name = "" };
+        var amount = 0.01M;
+
+        // Act
+        var result = await _underTest.PayAsync(fromAccount, toAccount, amount);
+
+        // Assert
+        Assert.NotNull(result);
+        Assert.True(result.Success);
+        // Assert.False(result.HasEmptyItem());
+        // var transfer = result.Item!;
+        // Assert.Equal(transfer.Amount, amount);                     
+        // Assert.Equal("PENDING_APPROVAL", result.Status.ToString()); 
+    }
+}

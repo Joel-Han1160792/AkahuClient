@@ -1,7 +1,7 @@
 namespace AkahuClient.Models.Accounts;
 
 /// <summary>
-/// Akahu category metadata returned by /categories endpoints.
+///     Akahu category metadata returned by /categories endpoints.
 /// </summary>
 public class Category
 {
@@ -9,7 +9,7 @@ public class Category
     public string? Name { get; set; }
 
     /// <summary>
-    /// A dictionary where the key is a grouping key, and the value is a Group object.
+    ///     A dictionary where the key is a grouping key, and the value is a Group object.
     /// </summary>
     public Dictionary<string, Group>? Groups { get; set; }
 }
